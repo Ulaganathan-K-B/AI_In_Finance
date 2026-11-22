@@ -1,0 +1,30 @@
+# Main experiment: nine SPDR sector ETFs, weekly, walk-forward 2005-2025.
+name: sector9_main
+universe: sector9
+seeds: 5
+cov_window: 104        # weeks of history for the Ledoit-Wolf covariance
+hist_window: 156       # weeks of history for the historical-mean baseline
+backtest_cost: 0.001   # 10 bps per unit of one-way turnover
+layer:
+  lam: 5.0             # risk aversion (weekly units)
+  lower: 0.0           # long-only
+  upper: 0.3           # position cap
+  eta: 0.0             # turnover penalty inside the layer
+walkforward:
+  first_test_year: 2005
+  val_weeks: 52
+  embargo: 1
+  min_train: 156
+train:
+  lr: 0.001
+  weight_decay: 0.0001
+  epochs: 300
+  patience: 40
+  min_epochs: 20
+  cost: 0.001          # same cost inside the decision loss
+methods:
+  - {name: pf_linear,   model: linear, loss: mse}
+  - {name: pf_mlp,      model: mlp,    loss: mse}
+  - {name: dfl_linear,  model: linear, loss: utility, init: pf_linear}
+  - {name: dfl_mlp,     model: mlp,    loss: utility, init: pf_mlp}
+  - {name: hybrid_mlp,  model: mlp,    loss: utility, init: pf_mlp, beta: 100.0, compare_to: pf_mlp}

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dfl-portfolio"
+version = "1.0.0"
+description = "Decision-focused learning for constrained mean-variance portfolios: a reproducible benchmark (AI4403 Project 4)"
+requires-python = ">=3.10"
+dependencies = ["numpy", "pandas", "scipy", "scikit-learn", "torch", "pyyaml", "matplotlib", "tabulate"]
+
+[project.optional-dependencies]
+data = ["yfinance"]
+test = ["pytest", "cvxpy", "cvxpylayers"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning:cvxpylayers.*"]

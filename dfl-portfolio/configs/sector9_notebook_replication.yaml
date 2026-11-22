@@ -1,0 +1,10 @@
+# Control for the notebook replication: the same three recipes on an ex-ante universe (sector ETFs).
+# If the notebook-style model only profits from concentrating in hindsight-selected winners,
+# its edge over pf_mlp should disappear here.
+base: megacap10_notebook_replication.yaml
+name: sector9_notebook_replication
+universe: sector9
+seeds: 3
+cov_window: 104
+hist_window: 156
+walkforward: {first_test_year: 2005, val_weeks: 52, embargo: 1, min_train: 156}

@@ -1,0 +1,16 @@
+# Robustness check: Fama-French 12 industry portfolios, walk-forward 1996-2025.
+name: ff12_main
+universe: ff12
+seeds: 3
+cov_window: 104
+hist_window: 156
+backtest_cost: 0.001
+layer: {lam: 5.0, lower: 0.0, upper: 0.25, eta: 0.0}
+walkforward: {first_test_year: 1996, val_weeks: 52, embargo: 1, min_train: 156}
+train: {lr: 0.001, weight_decay: 0.0001, epochs: 300, patience: 40, min_epochs: 20, cost: 0.001}
+methods:
+  - {name: pf_linear,   model: linear, loss: mse}
+  - {name: pf_mlp,      model: mlp,    loss: mse}
+  - {name: dfl_linear,  model: linear, loss: utility, init: pf_linear}
+  - {name: dfl_mlp,     model: mlp,    loss: utility, init: pf_mlp}
+  - {name: hybrid_mlp,  model: mlp,    loss: utility, init: pf_mlp, beta: 100.0, compare_to: pf_mlp}

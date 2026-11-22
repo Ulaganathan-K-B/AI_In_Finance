@@ -1,0 +1,18 @@
+# Research question 1: when does lower prediction error fail to give lower regret?
+name: synthetic_main
+degrees: [1, 2, 4, 6, 8]
+n_train: [100, 300, 1000]
+seeds: 20
+n_val: 200
+n_test: 2000
+spec: {n_assets: 10, n_features: 5, signal_sd: 0.005, mean: 0.002, factor_vol: 0.02, idio_vol: 0.03}
+layer: {lam: 10.0, lower: 0.0, upper: 0.4}
+train: {lr: 0.001, weight_decay: 0.0001, epochs: 300, patience: 50, min_epochs: 20, cost: 0.0}
+shifts:
+  vol_x2: {vol_scale: 2.0}
+methods:
+  - {name: pf_linear,          model: linear, loss: mse}
+  - {name: dfl_linear,         model: linear, loss: utility, init: pf_linear}
+  - {name: pf_mlp,             model: mlp,    loss: mse}
+  - {name: dfl_mlp,            model: mlp,    loss: utility, init: pf_mlp}
+  - {name: dfl_linear_scratch, model: linear, loss: utility}

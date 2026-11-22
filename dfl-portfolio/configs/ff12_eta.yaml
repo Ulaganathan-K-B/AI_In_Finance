@@ -1,0 +1,7 @@
+# Does DFL's FF12 gain survive when the two-stage pipeline also gets a turnover penalty in the layer?
+base: ff12.yaml
+name: ff12_eta
+layer: {eta: 0.001}
+methods:
+  - {name: pf_mlp,  model: mlp, loss: mse}
+  - {name: dfl_mlp, model: mlp, loss: utility, init: pf_mlp}

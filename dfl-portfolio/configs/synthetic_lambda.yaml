@@ -1,0 +1,17 @@
+# Research question 2 on synthetic data: risk aversion x position cap, with a volatility shift at test time.
+name: synthetic_lambda
+degrees: [6]
+n_train: [300]
+seeds: 5
+n_val: 200
+n_test: 2000
+spec: {n_assets: 10, n_features: 5, signal_sd: 0.005, mean: 0.002, factor_vol: 0.02, idio_vol: 0.03}
+train: {lr: 0.001, weight_decay: 0.0001, epochs: 300, patience: 50, min_epochs: 20, cost: 0.0}
+shifts:
+  vol_x2: {vol_scale: 2.0}
+methods:
+  - {name: pf_linear,  model: linear, loss: mse}
+  - {name: dfl_linear, model: linear, loss: utility, init: pf_linear}
+settings:
+  lam: [1.0, 2.0, 5.0, 10.0, 25.0, 50.0]
+  upper: [0.2, 0.4, 1.0]

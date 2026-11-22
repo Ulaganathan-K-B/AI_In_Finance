@@ -1,0 +1,11 @@
+# Research question 2: which constraints / risk penalties keep decision-focused training stable?
+# Every setting changes one knob of the base config; each is run as a walk-forward and as a frozen model.
+base: sector9.yaml
+seeds: 3
+methods:
+  - {name: pf_mlp,  model: mlp, loss: mse}
+  - {name: dfl_mlp, model: mlp, loss: utility, init: pf_mlp}
+settings:
+  lam:   [1.0, 2.0, 5.0, 10.0, 25.0]
+  upper: [0.2, 0.3, 0.5, 1.0]
+  eta:   [0.0, 0.0005, 0.001, 0.002]
