@@ -4,7 +4,6 @@
 
 **Train a return predictor *through* a differentiable mean-variance portfolio layer, and find out when that beats "predict, then optimise".**
 
-[![CI](https://github.com/Ulaganathan-K-B/AI_In_Finance/dfl-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Ulaganathan-K-B/AI_In_Finance/dfl-portfolio/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-CPU%20is%20enough-ee4c2c)
 ![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
@@ -29,10 +28,10 @@ decision-focused (DFL): θ fitted by ──┴───────────�
 | I want to… | Go to |
 |---|---|
 | read the full write-up (method, experiments, answers to the three research questions, limitations) | [`REPORT.md`](REPORT.md) |
-| see the layer and the main effect in about a minute | [`notebooks/demo.ipynb`](notebooks/demo.ipynb) |
+| see the layer and the main effect in about a minute | [`dfl-portfolio/notebooks/demo.ipynb`](dfl-portfolio/notebooks/demo.ipynb) |
 | run it on my machine | [Quick start](#quick-start) (Windows, macOS and Linux) |
 | use the layer in my own code | [Using the layer on its own](#using-the-layer-on-its-own) |
-| understand what was wrong with the first prototype | [`docs/NOTEBOOK_REVIEW.md`](docs/NOTEBOOK_REVIEW.md) |
+| understand what was wrong with the first prototype | [`dfl-portfolio/docs/NOTEBOOK_REVIEW.md`](dfl-portfolio/docs/NOTEBOOK_REVIEW.md) |
 
 ---
 
