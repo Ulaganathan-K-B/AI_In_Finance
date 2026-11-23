@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this code or its results, please cite it as below."
+title: "Decision-focused learning for constrained mean-variance portfolios"
+type: software
+authors:
+  - given-names: "Raam"
+    family-names: "M"
+  - given-names: "Adityawardhan"
+    family-names: "Yadava"
+  - given-names: "Ulaganathan"
+    family-names: "KS"
+version: 1.0.0
+date-released: 2026-11-22
+license: MIT
+repository-code: "https://github.com/<your-username>/dfl-portfolio"
+abstract: >-
+  A differentiable, exact mean-variance portfolio layer and a reproducible benchmark comparing
+  prediction-focused (MSE) and decision-focused training on synthetic and real asset universes.

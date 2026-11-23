@@ -11,7 +11,7 @@ import yaml
 
 def load_config(path: str | Path) -> Dict[str, Any]:
     path = Path(path)
-    with open(path) as fh:
+    with open(path, encoding="utf-8") as fh:
         cfg = yaml.safe_load(fh)
     if "base" in cfg:
         base = load_config(path.parent / cfg.pop("base"))

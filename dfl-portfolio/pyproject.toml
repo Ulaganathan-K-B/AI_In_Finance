@@ -6,12 +6,19 @@ build-backend = "setuptools.build_meta"
 name = "dfl-portfolio"
 version = "1.0.0"
 description = "Decision-focused learning for constrained mean-variance portfolios: a reproducible benchmark (AI4403 Project 4)"
+readme = "README.md"
+license = { text = "MIT" }
 requires-python = ">=3.10"
-dependencies = ["numpy", "pandas", "scipy", "scikit-learn", "torch", "pyyaml", "matplotlib", "tabulate"]
+dependencies = [
+  "numpy>=1.26", "pandas>=2.2", "scipy>=1.11", "scikit-learn>=1.3", "torch>=2.2",
+  "pyyaml>=6.0", "matplotlib>=3.8", "tabulate>=0.9",
+]
 
 [project.optional-dependencies]
-data = ["yfinance"]
-test = ["pytest", "cvxpy", "cvxpylayers"]
+data = ["yfinance>=0.2.40"]
+test = ["pytest>=7", "cvxpy>=1.4"]
+cvxpylayers = ["cvxpylayers>=0.1.6"]
+notebook = ["nbformat>=5", "nbconvert>=7", "ipykernel>=6", "ipython>=8"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

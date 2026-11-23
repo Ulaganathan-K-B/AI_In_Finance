@@ -5,7 +5,7 @@
     python scripts/download_data.py --force         # re-download (Yahoo data can change slightly)
 
 The repository ships the cached CSVs used for the reported results, so by default
-nothing is re-downloaded and the results reproduce exactly.
+nothing is re-downloaded and every experiment uses exactly the same input prices.
 """
 
 import argparse

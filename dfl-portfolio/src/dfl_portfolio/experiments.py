@@ -15,6 +15,7 @@ from __future__ import annotations
 import copy
 import json
 import multiprocessing as mp
+import sys
 import time
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -128,6 +129,20 @@ def train_methods(methods: List[Dict], train: Split, val: Split, layer: Portfoli
 _PANEL: Dict = {}
 
 
+def mp_context():
+    """Multiprocessing start method that exists on every OS.
+
+    Linux keeps the cheap ``fork``.  Windows has no ``fork`` and macOS's is unsafe with PyTorch, so they use
+    ``spawn``.  Workers receive the data panel through ``_init_worker`` so both methods behave identically.
+    """
+    return mp.get_context("fork" if sys.platform.startswith("linux") else "spawn")
+
+
+def _init_worker(panel: Dict) -> None:
+    global _PANEL
+    _PANEL = panel
+
+
 def _job(args):
     torch.set_num_threads(1)
     fold, seed, cfg = args
@@ -177,7 +192,7 @@ def run_walkforward(cfg: Dict, out_dir: Path, processes: int = 2, panel: Optiona
         print(f"{len(jobs)} jobs on {processes} processes")
     t0 = time.time()
     if processes > 1:
-        with mp.get_context("fork").Pool(processes) as pool:
+        with mp_context().Pool(processes, initializer=_init_worker, initargs=(panel,)) as pool:
             results = []
             for i, r in enumerate(pool.imap_unordered(_job, jobs)):
                 results.append(r)

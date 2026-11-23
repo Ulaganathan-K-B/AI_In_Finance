@@ -1,0 +1,17 @@
+# Normalise line endings in the repo, but keep shell scripts LF so they run in Git Bash / WSL / Linux
+# even when a Windows checkout has core.autocrlf=true.
+* text=auto
+*.sh   text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+*.yaml text eol=lf
+*.yml  text eol=lf
+*.toml text eol=lf
+*.cff  text eol=lf
+
+# Cached input prices: never touch the bytes, never show a diff
+data/raw/*.csv -text -diff
+
+# Binary results
+*.png binary
+*.npz binary

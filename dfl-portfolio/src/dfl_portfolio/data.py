@@ -16,6 +16,7 @@ re-run offline once the download has happened.
 from __future__ import annotations
 
 import io
+import os
 import zipfile
 from pathlib import Path
 from typing import Dict, Optional
@@ -51,7 +52,10 @@ FRENCH_URL = "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/{name}
 
 
 def default_data_dir() -> Path:
-    """Repository-level ``data/raw`` directory."""
+    """Repository-level ``data/raw`` directory (override with the ``DFL_DATA_DIR`` environment variable)."""
+    env = os.environ.get("DFL_DATA_DIR")
+    if env:
+        return Path(env)
     return Path(__file__).resolve().parents[2] / "data" / "raw"
 
 

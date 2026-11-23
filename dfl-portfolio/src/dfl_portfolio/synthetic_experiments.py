@@ -14,7 +14,6 @@ which is 0 for the oracle and 1 for a decision no better than 1/N.
 
 from __future__ import annotations
 
-import multiprocessing as mp
 import time
 from dataclasses import asdict
 from typing import Dict, List
@@ -23,7 +22,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-from .experiments import train_methods
+from .experiments import mp_context, train_methods
 from .features import FeatureScaler
 from .layers import PortfolioLayer
 from .metrics import expected_utility, prediction_metrics
@@ -99,14 +98,22 @@ def _job(args):
     return rows, diags
 
 
+def _results(jobs, processes: int):
+    """Yield job results; ``processes <= 1`` runs serially (handy for debugging)."""
+    if processes > 1:
+        with mp_context().Pool(processes) as pool:
+            yield from pool.imap_unordered(_job, jobs)
+    else:
+        yield from map(_job, jobs)
+
+
 def run_synthetic(cfg: Dict, processes: int = 2, verbose: bool = True):
     jobs = [(d, n, s, cfg) for d in cfg["degrees"] for n in cfg["n_train"] for s in range(cfg.get("seeds", 5))]
     t0 = time.time()
     rows, diags = [], []
-    with mp.get_context("fork").Pool(processes) as pool:
-        for i, (r, dg) in enumerate(pool.imap_unordered(_job, jobs)):
-            rows.extend(r)
-            diags.extend(dg)
-            if verbose and (i + 1) % max(1, len(jobs) // 10) == 0:
-                print(f"  {i + 1}/{len(jobs)} jobs ({time.time() - t0:.0f}s)", flush=True)
+    for i, (r, dg) in enumerate(_results(jobs, processes)):
+        rows.extend(r)
+        diags.extend(dg)
+        if verbose and (i + 1) % max(1, len(jobs) // 10) == 0:
+            print(f"  {i + 1}/{len(jobs)} jobs ({time.time() - t0:.0f}s)", flush=True)
     return pd.DataFrame(rows), pd.DataFrame(diags)

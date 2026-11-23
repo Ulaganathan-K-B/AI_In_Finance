@@ -1,0 +1,51 @@
+# --- Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- virtual environments
+.venv/
+venv/
+env/
+
+# --- OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# --- smoke-test output (QUICK runs write to *_quick folders)
+results/*_quick/
+results/figures_quick/
+results/tables_quick/
+
+# --- run logs contain absolute paths of the machine that produced them
+results/logs/
+
+# --- local scratch
+.env
+*.tmp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment/secrets
+.env
+.env.*
+
+# IDE
+.vscode/
+
+# Large/local data
+data/
+*.csv
+*.parquet
+
+# Model outputs
+models/
+checkpoints/

@@ -126,7 +126,7 @@ tab = ROOT / "results" / "tables"
 for name in ["synthetic_pooled_dfl_vs_pf", "sector9_main_summary", "sector9_main_tests"]:
     f = tab / f"{name}.md"
     if f.exists():
-        display(Markdown(f"**{name}**\\n\\n" + f.read_text()))
+        display(Markdown(f"**{name}**\\n\\n" + f.read_text(encoding="utf-8")))
     else:
         print(f"{f} not found: run scripts/reproduce_all.sh first")"""),
 ]

@@ -88,7 +88,7 @@ def fmt_table(df: pd.DataFrame, name: str, floatfmt: str = ".3f"):
     multi = isinstance(df.index, pd.MultiIndex)
     out = df.reset_index() if multi else df
     out = out.astype(object).where(out.notna(), None)  # blank cells instead of "nan"
-    with open(TAB / f"{name}.md", "w") as fh:
+    with open(TAB / f"{name}.md", "w", encoding="utf-8") as fh:
         fh.write(out.to_markdown(floatfmt=floatfmt, index=not multi, missingval=""))
     print("wrote", TAB / f"{name}.md")
 
@@ -513,7 +513,7 @@ def fig_notebook_diagnostics():
     name = "megacap10_notebook_replication"
     if not have(f"{name}/histories.json"):
         return
-    with open(R(name) / "histories.json") as fh:
+    with open(R(name) / "histories.json", encoding="utf-8") as fh:
         hist = json.load(fh)
     fig, axes = plt.subplots(1, 3, figsize=(14.5, 3.8), gridspec_kw={"width_ratios": [1, 1, 1.15]})
     nb_color, fix_color = MAGENTA, ORANGE

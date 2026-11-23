@@ -419,8 +419,9 @@ with the same walk-forward protocol and costs as everything else.
 
 ## 7. Reproducibility
 
-`bash scripts/reproduce_all.sh` re-runs everything from the cached prices in `data/raw`. It takes about 4 hours on
-2 CPU cores. `QUICK=1` runs a smoke test in 5-10 minutes. Every configuration is in `configs/` and copied to
+`python scripts/reproduce_all.py` (Windows, macOS, Linux) or `bash scripts/reproduce_all.sh` re-runs everything from
+the cached prices in `data/raw`. It takes about 4 hours on 2 CPU cores. `--quick` (or `QUICK=1` with the bash script)
+runs a smoke test in 5-10 minutes. Every configuration is in `configs/` and copied to
 `results/<name>/config.json`. Seeds are fixed. `python -m pytest` runs 18 tests: the layer against CVXPY and finite
 differences, the features with no look-ahead, the folds with no leakage, and the backtest identities.
 
