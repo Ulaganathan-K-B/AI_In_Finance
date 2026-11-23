@@ -85,7 +85,7 @@ MSE term restores calibration and keeps DFL's decision quality.
 > weak, so these results are about the *training loss*, not a trading strategy. DFL's real-data edge comes mostly
 > from learning forecasts that trade less; once the two-stage pipeline gets a turnover penalty in its optimiser, it
 > catches up (on sector ETFs it matches or beats DFL; on FF12 DFL's lead is no longer significant, p = 0.23). On the
-> hindsight-selected mega-caps DFL loses, though not significantly. Details and caveats are in [`docs/REPORT.md`](docs/REPORT.md) §4.4 and §6.
+> hindsight-selected mega-caps DFL loses, though not significantly. Details and caveats are in [`REPORT.md`](REPORT.md) §4.4 and §6.
 
 CVaR-regularised DFL is the most robust learned model: best Sharpe, tail risk and turnover among learned models, both
 walk-forward and frozen, over 2007–2025.
