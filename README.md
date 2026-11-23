@@ -92,8 +92,8 @@ walk-forward and frozen, over 2007–2025.
 
 | | |
 |---|---|
-| ![Regret vs misspecification](dfl-portfolio/results/images/fig1_synthetic_regret_vs_degree.png) | ![MSE vs regret](dfl-portfolio/results/images/results/figures/fig2_mse_vs_regret.png) |
-| ![Wealth on FF12](dfl-portfolio/results/images/results/figures/fig4_wealth_ff12_main.png) | ![Robust extension](dfl-portfolio/results/images/results/figures/fig7_robust_extension.png) |
+| ![Regret vs misspecification](dfl-portfolio/results/images/fig1_synthetic_regret_vs_degree.png) | ![MSE vs regret](dfl-portfolio/results/images/fig2_mse_vs_regret.png) |
+| ![Wealth on FF12](dfl-portfolio/results/images/fig4_wealth_ff12_main.png) | ![Robust extension](dfl-portfolio/results/imagesfig7_robust_extension.png) |
 
 ---
 
@@ -283,7 +283,7 @@ results in the last digits. Price data come from third-party providers and remai
 - Weekly frequency, long-only, 9–12 assets. Σ̂ is estimated (rolling Ledoit-Wolf), not learned.
 - DFL hyper-parameters were set once from a pilot on 2010–2012 and not tuned per universe.
 
-The full list is in [`docs/REPORT.md`](docs/REPORT.md) §6.
+The full list is in [`REPORT.md`](REPORT.md) §6.
 
 ## Team and AI assistance
 
