@@ -92,8 +92,8 @@ walk-forward and frozen, over 2007–2025.
 
 | | |
 |---|---|
-| ![Regret vs misspecification](results/figures/fig1_synthetic_regret_vs_degree.png) | ![MSE vs regret](results/figures/fig2_mse_vs_regret.png) |
-| ![Wealth on FF12](results/figures/fig4_wealth_ff12_main.png) | ![Robust extension](results/figures/fig7_robust_extension.png) |
+| ![Regret vs misspecification](dfl-portfolio/results/images/fig1_synthetic_regret_vs_degree.png) | ![MSE vs regret](dfl-portfolio/results/images/results/figures/fig2_mse_vs_regret.png) |
+| ![Wealth on FF12](dfl-portfolio/results/images/results/figures/fig4_wealth_ff12_main.png) | ![Robust extension](dfl-portfolio/results/images/results/figures/fig7_robust_extension.png) |
 
 ---
 
