@@ -4,6 +4,7 @@
 
 **Train a return predictor *through* a differentiable mean-variance portfolio layer, and find out when that beats "predict, then optimise".**
 
+[![CI](https://github.com/Ulaganathan-K-B/dfl-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Ulaganathan-K-B/dfl-portfolio/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-CPU%20is%20enough-ee4c2c)
 ![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
@@ -27,7 +28,7 @@ decision-focused (DFL): θ fitted by ──┴───────────�
 
 | I want to… | Go to |
 |---|---|
-| read the full write-up (method, experiments, answers to the three research questions, limitations) | [`docs/REPORT.md`](docs/REPORT.md) |
+| read the full write-up (method, experiments, answers to the three research questions, limitations) | [`REPORT.md`](REPORT.md) |
 | see the layer and the main effect in about a minute | [`notebooks/demo.ipynb`](notebooks/demo.ipynb) |
 | run it on my machine | [Quick start](#quick-start) (Windows, macOS and Linux) |
 | use the layer in my own code | [Using the layer on its own](#using-the-layer-on-its-own) |
@@ -289,8 +290,8 @@ The full list is in [`docs/REPORT.md`](docs/REPORT.md) §6.
 
 Group 4, AI4403 *AI in Finance*: Raam M, Adityawardhan Yadava, Ulaganathan KS.
 
-> **AI-assistance declaration**
-> Large language models were used for creating files in this repo.
+> **AI-assistance declaration** *(edit this so it matches what actually happened; the course requires it)*:
+> Large language models were used for: [e.g. writing and reviewing code, debugging, literature survey, drafting the report].
 > All experiments in this repository were produced by running the code here; the authors reviewed the method, the
 > results and the conclusions.
 
