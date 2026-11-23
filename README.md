@@ -89,11 +89,11 @@ MSE term restores calibration and keeps DFL's decision quality.
 
 CVaR-regularised DFL is the most robust learned model: best Sharpe, tail risk and turnover among learned models, both
 walk-forward and frozen, over 2007–2025.
-
+f
 | | |
 |---|---|
 | ![Regret vs misspecification](dfl-portfolio/results/images/fig1_synthetic_regret_vs_degree.png) | ![MSE vs regret](dfl-portfolio/results/images/fig2_mse_vs_regret.png) |
-| ![Wealth on FF12](dfl-portfolio/results/images/fig4_wealth_ff12_main.png) | ![Robust extension](dfl-portfolio/results/imagesfig7_robust_extension.png) |
+| ![Wealth on FF12](dfl-portfolio/results/images/fig4_wealth_ff12_main.png) | ![Robust extension](dfl-portfolio/results/images/fig7_robust_extension.png) |
 
 ---
 
@@ -105,7 +105,7 @@ reported results are in `data/raw/`, so nothing has to be downloaded.
 ### Windows (PowerShell)
 
 ```powershell
-git clone https://github.com/<your-username>/dfl-portfolio.git
+git clone https://github.com/Ulaganathan-K-B/AI_In_Finance.git
 cd dfl-portfolio
 
 py -3.12 -m venv .venv                       # or: python -m venv .venv
@@ -124,7 +124,7 @@ Clone into a short path outside OneDrive (for example `C:\dev\dfl-portfolio`).
 ### macOS / Linux
 
 ```bash
-git clone https://github.com/<your-username>/dfl-portfolio.git
+git clone https://github.com/Ulaganathan-K-B/AI_In_Finance.git
 cd dfl-portfolio
 
 python3 -m venv .venv && source .venv/bin/activate
@@ -171,7 +171,7 @@ python scripts/make_figures.py                                    # figures + ta
 | `ablation_sector9.yaml` | RQ2: one knob at a time (λ, cap, η) | sector ETFs |
 | `robust_sector9.yaml` (+ `--frozen`) | extension: CVaR / DRO losses under regime shift | sector ETFs |
 
-Every run writes to `results/<name>/`:
+Every run writes to `/dfl-portfolio/results/images/`:
 
 | File | Contents |
 |---|---|
@@ -254,7 +254,7 @@ results in the last digits. Price data come from third-party providers and remai
 
 ## Reproducibility notes
 
-- Seeds are fixed and every configuration is copied to `results/<name>/config.json`.
+- Seeds are fixed and every configuration is copied to `results/config.json`.
 - Re-running on another machine, operating system, BLAS or PyTorch version will give very similar but not
   bit-identical numbers: DFL uses early stopping on a validation loss, so tiny floating-point differences can change the
   selected epoch. Compare against the reported numbers with seed-level noise in mind (the `sd` columns in `summary.csv`).
