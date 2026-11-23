@@ -4,7 +4,7 @@
 
 **Train a return predictor *through* a differentiable mean-variance portfolio layer, and find out when that beats "predict, then optimise".**
 
-[![CI](https://github.com/<your-username>/dfl-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/dfl-portfolio/actions/workflows/ci.yml)
+[![CI](https://github.com/<your-username>/dfl-portfolio/actions/workflows/ci.yml/badge.svg)]
 ![Python](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-CPU%20is%20enough-ee4c2c)
 ![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
