@@ -305,4 +305,4 @@ Elmachtoub & Grigas (2022), *Smart "predict, then optimize"*; Donti, Amos & Kolt
 learning*; Butler & Kwon (2023), *Integrating prediction in mean-variance portfolio optimization*;
 Costa & Iyengar (2023), *Distributionally robust end-to-end portfolio construction*; Mandi et al. (2024), *Decision-focused
 learning: foundations, state of the art, benchmark and future opportunities*; Rockafellar & Uryasev (2000);
-Ledoit & Wolf (2004); DeMiguel, Garlappi & Uppal (2009). Full list in [`docs/REPORT.md`](docs/REPORT.md).
+Ledoit & Wolf (2004); DeMiguel, Garlappi & Uppal (2009). Full list in [`REPORT.md`](REPORT.md).
