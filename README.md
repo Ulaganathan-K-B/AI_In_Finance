@@ -31,7 +31,7 @@ decision-focused (DFL): θ fitted by ──┴───────────�
 | see the layer and the main effect in about a minute | [`dfl-portfolio/notebooks/demo.ipynb`](dfl-portfolio/notebooks/demo.ipynb) |
 | run it on my machine | [Quick start](#quick-start) (Windows, macOS and Linux) |
 | use the layer in my own code | [Using the layer on its own](#using-the-layer-on-its-own) |
-| understand what was wrong with the first prototype | [`dfl-portfolio/docs/NOTEBOOK_REVIEW.md`](dfl-portfolio/docs/NOTEBOOK_REVIEW.md) |
+| understand what was wrong with the first prototype | [`dfl-portfolio/notebooks/NOTEBOOK_REVIEW.md`](dfl-portfolio/notebooks/NOTEBOOK_REVIEW.md) |
 
 ---
 
