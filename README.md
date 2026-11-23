@@ -289,8 +289,8 @@ The full list is in [`docs/REPORT.md`](docs/REPORT.md) §6.
 
 Group 4, AI4403 *AI in Finance*: Raam M, Adityawardhan Yadava, Ulaganathan KS.
 
-> **AI-assistance declaration** *(edit this so it matches what actually happened; the course requires it)*:
-> Large language models were used for: [e.g. writing and reviewing code, debugging, literature survey, drafting the report].
+> **AI-assistance declaration**
+> Large language models were used for creating files in this repo.
 > All experiments in this repository were produced by running the code here; the authors reviewed the method, the
 > results and the conclusions.
 
